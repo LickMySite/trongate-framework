@@ -16,7 +16,7 @@ http_response_code(404);
     <style>
         body {
             font-size: 2em;
-            background: #ff0000;
+            background: #000000;
             color: #ddd;
             text-align: center;
             font-family: "Lucida Console", Monaco, monospace;

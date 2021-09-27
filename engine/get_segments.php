@@ -6,13 +6,12 @@ function get_segments($ignore_custom_routes=NULL) {
     $psuedo_url = rtrim($psuedo_url, '/');
     $bits = explode('/', $psuedo_url);
     $num_bits = count($bits);
+    $num_segments_to_ditch = 0;
 
     if ($num_bits>1) {
         $num_segments_to_ditch = $num_bits-1;
-    } else {
-        $num_segments_to_ditch = 0;
     }
-
+    
     $assumed_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] .  $_SERVER['REQUEST_URI'];
 
     if (!isset($ignore_custom_routes)) {
